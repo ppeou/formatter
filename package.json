@@ -11,7 +11,7 @@
     "pretest": "rollup -c",
     "test": "mocha './test/*.js' --reporter spec --require esm",
     "test:watch": "mocha --watch --recursive ./test/*.js --require esm",
-    "cover": "node ./node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec ./test/*.js --require esm"
+    "cover": "nyc npm run test"
   },
   "author": "ppeou",
   "license": "MIT",
@@ -21,13 +21,14 @@
     "eslint": "^5.16.0",
     "eslint-plugin-node": "^9.0.1",
     "esm": "^3.2.25",
-    "istanbul": "^0.4.5",
     "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
     "rollup": "^1.16.2",
     "rollup-plugin-terser": "^5.0.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ppeou/formatter.git"
-  }
+  },
+  "dependencies": {}
 }
