@@ -11,7 +11,7 @@
     "pretest": "rollup -c",
     "test": "mocha './test/*.js' --reporter spec --require esm",
     "test:watch": "mocha --watch --recursive ./test/*.js --require esm",
-    "cover": "nyc npm run test"
+    "cover": "nyc npm run test  --reporter=lcov --reporter=text-summary ava"
   },
   "author": "ppeou",
   "license": "MIT",
