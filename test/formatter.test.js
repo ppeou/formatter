@@ -1,8 +1,6 @@
 import assert from 'assert';
 import Formatter from '../index.js';
 
-console.clear();
-
 describe('Test Formatter', () => {
   describe('1. Test Formatter', () => {
     it('1.1. Formatter() is returning function', () => {
@@ -123,13 +121,24 @@ describe('Test Formatter', () => {
   describe('4. Test Formatter with Missing JSON Field', () => {
     it('4.1. Test Formatting City, State Zip', () => {
       const mapper = {'%a': 'address', '%c': 'city', '%s': 'state', '%z': 'zipcode'};
-      const format = '%a \n %c, %s %z';
+      const format = '%a - %c, %s %z';
       const formatter = Formatter({mapper, format});
-      const input = {city: 'Houston', state: 'Texas', zipcode: '77001'};
-      const expected = `${input.city}, ${input.state} ${input.zipcode}`;
-      const actual = formatter(input);
+      let [input, expected, actual] = [];
+
+      input = {city: 'Houston', state: 'Texas', zipcode: '77001'};
+      expected = ` - ${input.city}, ${input.state} ${input.zipcode}`;
+      actual = formatter(input);
+      assert.strictEqual(expected, actual);
+
+      input = {address: '123', state: 'NY', zipcode: '00123'};
+      expected = `123 - , NY 00123`;
+      actual = formatter(input);
+      assert.strictEqual(expected, actual);
+
+      input = {address: '123'};
+      expected = `123 - ,  `;
+      actual = formatter(input);
       assert.strictEqual(expected, actual);
     });
   });
 });
-

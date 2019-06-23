@@ -3,15 +3,11 @@ export default {
   input: './index.js',
   plugins: [terser()],
   output: [{
-    name: 'Formatter',
+    name: 'formatter',
     file: './dist/formatter.js',
     format: 'umd'
   },{
-    name: 'Formatter',
-    file: './dist/formatter.umd.js',
-    format: 'umd'
-  },{
-    name: 'Formatter',
+    name: 'formatter',
     file: './dist/formatter.esm.js',
     format: 'esm'
   }]
