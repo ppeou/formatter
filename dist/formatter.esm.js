@@ -1,0 +1,1 @@
+export default({format:e,mapper:t}={})=>{if(!e||!t)return e=>(null==e?"":e).toString();const n=Object.keys(t).reduce((e,n)=>(e.push(`${t[n]}: ''`),e),[]),r=Object.keys(t).reduce((e,n)=>e.replace(new RegExp(`${n}`,"g"),`\${data.${t[n]}}`),e);return e=>(console.log(">>",`{${n.join(",")}}`),new Function("...data","return `"+r+"`")(t=>Object.assign({},n,e)))};
