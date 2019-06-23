@@ -15,7 +15,7 @@ npm install @ppeou/formatter
 ES6 Style:
 ```
 <script type="module">
-  import formatter from './formatter.esm.js'
+  import formatter from './node_modules/@ppeou/formatter/dist/formatter.esm.js';
 
   const mapper = {
     '%a1': 'address1', '%a2': 'address2',
@@ -55,7 +55,7 @@ ES6 Style:
 
 CommonJS / Node
 ```
-const formatter = require('./formatter');
+const formatter = require('@ppeou/formatter');
 
 const mapper = {
   '%a1': 'address1', '%a2': 'address2',
@@ -79,7 +79,7 @@ console.log(output);
 
 ES5/Javascript
 ```
-<script src="node_modules/@ppeou/dist/formatter.js" type="text/javascript"></script>
+<script src="node_modules/@ppeou/formatter/dist/formatter.js" type="text/javascript"></script>
 <script>
   const mapper = {
     '%a1': 'address1', '%a2': 'address2',
