@@ -11,7 +11,7 @@
     "pretest": "rollup -c",
     "test": "mocha './test/*.js' --reporter spec --require esm",
     "test:watch": "mocha --watch --recursive ./test/*.js --require esm",
-    "cover": "istanbul cover _mocha -- -R spec ./test/*.js --require esm"
+    "cover": "node ./node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec ./test/*.js --require esm"
   },
   "author": "ppeou",
   "license": "MIT",
