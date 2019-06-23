@@ -109,3 +109,6 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+[![Build Status](https://travis-ci.com/ppeou/formatter.svg?branch=master)](https://travis-ci.com/ppeou/formatter)
+[![Coverage Status](https://coveralls.io/repos/github/ppeou/formatter/badge.svg?branch=master)](https://coveralls.io/github/ppeou/formatter?branch=master)

@@ -1,0 +1,35 @@
+{
+  "name": "@ppeou/formatter",
+  "version": "0.0.2",
+  "description": "text formatter",
+  "main": "dist/formatter.js",
+  "module": "dist/formatter.esm.js",
+  "scripts": {
+    "prebuild": "eslint index.js test --fix",
+    "build": "rollup -c --environment BUILD:production",
+    "build:watch": "rollup -c -w",
+    "pretest": "rollup -c",
+    "test": "mocha './test/*.js' --reporter spec --require esm",
+    "test:watch": "mocha --watch --recursive ./test/*.js --require esm",
+    "cover": "node ./node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec ./test/*.js --require esm"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-node": "^9.0.1",
+    "esm": "^3.2.25",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.1.4"
+  },
+  "author": "ppeou",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^1.16.2",
+    "rollup-plugin-terser": "^5.0.0"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ppeou/formatter.git"
+  }
+}
